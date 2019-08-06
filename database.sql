@@ -16,6 +16,9 @@ SELECT "username" FROM "accounts"
 WHERE "transactions_attempted" > 8;
 
 -- 4. How do you get the username and account balance of the 3 users with the highest balances, sorted highest to lowest balance? NOTE: Research LIMIT
+SELECT "username", "account_balance" FROM "accounts"
+ORDER BY "account_balance" DESC
+LIMIT 3;
 
 
 -- 5. How do you get the username and account balance of the 3 users with the lowest balances, sorted lowest to highest balance?
@@ -28,5 +31,9 @@ SELECT "username" FROM "accounts"
 WHERE "account_balance" > 100;
 
 -- 7. How do you add a new account?
+INSERT INTO "database name" ("column names");
+VALUE ('new account info');
 
 -- 8. The bank is losing money in Miami and Phoenix and needs to unload low transaction customers: How do you delete users that reside in miami OR phoenix and have completed fewer than 5 transactions.
+SELECT * FROM "accounts"
+WHERE ("city" LIKE 'miami' OR "city" LIKE 'phoenix') AND ("transactions_completed" < 5);
