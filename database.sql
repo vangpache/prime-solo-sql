@@ -37,3 +37,10 @@ VALUE ('new account info');
 -- 8. The bank is losing money in Miami and Phoenix and needs to unload low transaction customers: How do you delete users that reside in miami OR phoenix and have completed fewer than 5 transactions.
 SELECT * FROM "accounts"
 WHERE ("city" LIKE 'miami' OR "city" LIKE 'phoenix') AND ("transactions_completed" < 5);
+
+-- STRETCH GOALS --
+
+-- 1. Anthony moved to Sante Fe.
+UPDATE "accounts"
+SET "city" = 'sante fe'
+WHERE "username" = 'anthony';
